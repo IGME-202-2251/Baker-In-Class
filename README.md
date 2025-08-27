@@ -1,7 +1,7 @@
 # 202 Work Repo
 
 - IGME 202 - 2251
-- Unity Version - [6.0 (6000.0.54)LTS](https://unity.com/releases/editor/whats-new/6000.0.54)
+- Unity Version - [6.0 (6000.0.53)LTS](https://unity.com/releases/editor/whats-new/6000.0.53)
 - Do NOT create any new Unity projects!
     - All exercises & projects will be created as new scenes in the appropriate existing 2D or 3D project.
 - Player Settings
