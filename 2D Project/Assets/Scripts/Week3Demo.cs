@@ -5,6 +5,9 @@ public class Week3Demo : MonoBehaviour
 {
     public SpriteRenderer sprite;
 
+    [SerializeField]
+    Vector3 spawnPosition;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -21,13 +24,26 @@ public class Week3Demo : MonoBehaviour
     {
         if (context.phase == InputActionPhase.Canceled)
         {
-            SpriteRenderer newSR = Instantiate(sprite, transform.position, Quaternion.identity);
+            /*//  Get mouse pos
+            spawnPosition = Mouse.current.position.ReadValue();
+
+            spawnPosition = Camera.main.ScreenToWorldPoint(spawnPosition);
+
+            spawnPosition.z = 10;*/
+
+            SpriteRenderer newSR = Instantiate(sprite, spawnPosition, Quaternion.identity);
+
             newSR.color = Random.ColorHSV(1, 1, 1, 1, 0, 1);
         }
     }
 
-    public void JumpyJump(InputAction.CallbackContext randomStuff)
+    public void OnMove(InputAction.CallbackContext context)
     {
+        //  Get mouse pos
+        spawnPosition = context.ReadValue<Vector2>();
 
+        spawnPosition = Camera.main.ScreenToWorldPoint(spawnPosition);
+
+        spawnPosition.z = 10;
     }
 }
