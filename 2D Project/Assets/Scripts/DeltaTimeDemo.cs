@@ -11,6 +11,8 @@ public class DeltaTimeDemo : MonoBehaviour
     [SerializeField]
     int frameRate = 60;
 
+    Vector3 frameDist, deltaDist;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -24,11 +26,22 @@ public class DeltaTimeDemo : MonoBehaviour
 
         Vector2 pos = frameObject.transform.position;
         pos.x += 0.01f;
+        frameDist = (frameObject.transform.position - (Vector3)pos);
         frameObject.transform.position = pos;
 
         pos = deltaObject.transform.position;
         pos.x += 0.6f * Time.deltaTime;
+        deltaDist = (deltaObject.transform.position - (Vector3)pos);
         deltaObject.transform.position = pos;
+
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.magenta;
+        Gizmos.DrawRay(frameObject.transform.position, frameDist);
+
+        Gizmos.DrawRay(deltaObject.transform.position, deltaDist);
 
     }
 }
