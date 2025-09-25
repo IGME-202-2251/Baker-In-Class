@@ -406,7 +406,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1616355993}
   - component: {fileID: 1616355992}
-  - component: {fileID: 1616355991}
   - component: {fileID: 1616355990}
   m_Layer: 0
   m_Name: Square
@@ -461,33 +460,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!50 &1616355991
-Rigidbody2D:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1616355989}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!212 &1616355992
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -722,12 +694,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6965178066555423688, guid: c34fc09d9f7d10a4c89a8318bbcb39fe, type: 3}
       propertyPath: speed
-      value: 5
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 6965178066555423688, guid: c34fc09d9f7d10a4c89a8318bbcb39fe, type: 3}
       propertyPath: rbody2D
       value: 
       objectReference: {fileID: 144179599}
+    - target: {fileID: 6965178066555423688, guid: c34fc09d9f7d10a4c89a8318bbcb39fe, type: 3}
+      propertyPath: usePhysics
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7386753505254377707, guid: c34fc09d9f7d10a4c89a8318bbcb39fe, type: 3}
       propertyPath: m_BodyType
       value: 1

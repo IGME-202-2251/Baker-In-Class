@@ -21,6 +21,10 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         //rbody2D = GetComponent<Rigidbody2D>();
+
+        Debug.Log("Height = " + Camera.main.orthographicSize * 2f);
+
+        Debug.Log("Width = " + (Camera.main.orthographicSize * 2f) * Camera.main.aspect);
     }
 
     // Update is called once per frame
