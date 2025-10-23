@@ -2,17 +2,17 @@ using UnityEngine;
 
 public abstract class Agent : MonoBehaviour
 {
-    [SerializeField]
     Vector3 position = Vector3.zero;
 
-    [SerializeField]
     Vector3 velocity = Vector3.zero;
 
-    [SerializeField]
     Vector3 acceleration = Vector3.zero;
 
     [SerializeField]
     float maxSpeed = 5f;
+
+    [SerializeField]
+    float maxForce = 5f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -28,6 +28,8 @@ public abstract class Agent : MonoBehaviour
 
         // Add Steering force to Acceleration
         acceleration += CalcSteeringForces();
+
+        acceleration = Vector3.ClampMagnitude(acceleration, maxForce);
 
         // Update Velocity with current Acceleration
         velocity += acceleration * Time.deltaTime;
@@ -55,6 +57,10 @@ public abstract class Agent : MonoBehaviour
 
         // Return seek steering force
         return seekingForce;
+    }
 
+    protected Vector3 Seek(GameObject targetObj)
+    {
+        return Seek(targetObj.transform.position);
     }
 }

@@ -136,11 +136,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8327c89f77c4d2c4480d740f38d2c808, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  position: {x: 0, y: 0, z: 0}
-  velocity: {x: 0, y: 0, z: 0}
-  acceleration: {x: 0, y: 5, z: 0}
   maxSpeed: 5
+  maxForce: 5
   target: {fileID: 1943705628}
+  targetSeekWeight: 1
+  mouseSeekWeight: 1
 --- !u!1 &1736125084
 GameObject:
   m_ObjectHideFlags: 0
@@ -199,7 +199,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: 0
   far clip plane: 1000
   field of view: 60
   orthographic: 1
@@ -228,7 +228,7 @@ Transform:
   m_GameObject: {fileID: 1736125084}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
