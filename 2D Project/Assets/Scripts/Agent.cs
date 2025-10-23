@@ -11,7 +11,8 @@ public abstract class Agent : MonoBehaviour
     [SerializeField]
     Vector3 acceleration = Vector3.zero;
 
-
+    [SerializeField]
+    float maxSpeed = 5f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -36,4 +37,24 @@ public abstract class Agent : MonoBehaviour
     }
 
     protected abstract Vector3 CalcSteeringForces();
+
+
+    //
+    //  Steering Behaviors
+    //
+    protected Vector3 Seek(Vector3 targetPos)
+    {
+        // Calculate desired velocity
+        Vector3 desiredVelocity = targetPos - transform.position;
+
+        // Set desired = max speed
+        desiredVelocity = desiredVelocity.normalized * maxSpeed;
+
+        // Calculate seek steering force
+        Vector3 seekingForce = desiredVelocity - velocity;
+
+        // Return seek steering force
+        return seekingForce;
+
+    }
 }
