@@ -19,6 +19,8 @@ public class ObjectCLcker : MonoBehaviour
 
     public void OnFire(InputAction.CallbackContext context)
     {
+        Cursor.lockState = CursorLockMode.Locked;
+
         if (context.performed)
         {
             if (Physics.Raycast(transform.position, transform.forward, out hitInfo))
