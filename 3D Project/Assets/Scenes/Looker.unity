@@ -486,7 +486,7 @@ Transform:
   m_GameObject: {fileID: 1364205843}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -38.95}
+  m_LocalPosition: {x: 0, y: 6.27, z: -11.45}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -507,7 +507,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerCamera: {fileID: 573966347}
   mouseInput: {x: 0, y: 0}
-  lookSensitifity: {x: 0, y: 0}
+  lookSensitifity: {x: 0.3, y: 0.3}
   maxLookUpAngle: 70
 --- !u!114 &1364205849
 MonoBehaviour:
@@ -679,6 +679,7 @@ MonoBehaviour:
   goundLayerMask:
     serializedVersion: 2
     m_Bits: 8
+  yOffset: 2
 --- !u!1 &1491537794
 GameObject:
   m_ObjectHideFlags: 0
